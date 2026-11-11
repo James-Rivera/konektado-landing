@@ -1,0 +1,17 @@
+iPhone 16 Pro — Black Titanium frame
+Source: https://github.com/ronaldo-avalos/Maya/blob/main/Maya/Assets.xcassets/iphone%20frames/iPhone%2016%20Pro%20-%20Black%20Titanium.imageset/iPhone%2016%20Pro%20-%20Black%20Titanium.png
+Project: Maya by Ronaldo Avalos
+License: MIT; complete notice in Maya-LICENSE.txt
+Downloaded 2026-11-07. Frame unchanged; a static welcome-screen concept is displayed underneath.
+iPhone is a trademark of Apple Inc.
+
+KONEKTADO logo: inherited unchanged from the original KONEKTADO hackathon project. No Satoshi or Helvetica font files are distributed with this project.
+
+Welcome cover: screenshot supplied by the user, 2026-11-09. Shown as an app-preview cover; it is a static design artifact with no account or application actions.
+Inter variable font: inherited from the original KONEKTADO project. SIL Open Font License notice preserved in Inter-OFL.txt. Helvetica/Helvetica Neue are system font references only; no Helvetica font files are distributed.
+
+Portrait and hackathon placeholders: simple repo-native SVG layouts created for this site. They are labeled placeholders and do not depict real people or event moments.
+
+Find Work photograph and five team portraits: supplied by the owner, 2026-11-11. Optimized WebP copies use EXIF-correct orientation and no embedded source metadata. Original files are retained unchanged outside this project. Team photos replaced the portrait placeholders at that update; event placeholders were subsequently replaced by the supplied gallery photos listed below.
+
+Hackathon gallery: owner-supplied photos, 2026-11-11. TEAM INNOBYTE2.HEIC -> hackathon/team-innobyte.webp; IMG_3839.HEIC -> hackathon/award-presentation.webp; IMG_3843.HEIC -> hackathon/third-runner-up.webp. Converted with EXIF-correct orientation, resized to 1920 x 1440 maximum, WebP quality 85; no embedded source metadata. Full compositions retained. Original files are unchanged.

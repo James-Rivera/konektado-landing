@@ -1,0 +1,15 @@
+{
+  "name": "konektado-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Standalone Konektado editorial website",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.cjs",
+    "dev": "node server.cjs",
+    "check": "node --check public/site-config.js && node --check public/translations.js && node --check public/script.js && node --check public/team-motion.js && node --check public/find-work-motion.js && node --check server.cjs && node --check test-site.cjs",
+    "test": "node --test test-site.cjs"
+  }
+}
