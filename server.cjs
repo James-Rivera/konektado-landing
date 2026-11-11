@@ -14,6 +14,7 @@ const PUBLIC_PATHS = new Set([
   ].map(file => `/assets/${file}`),
   ...['james-carlo-rivera', 'dale-andrew-lee', 'lance-montifar', 'mark-vincent-plaza', 'marcus-gabriel-marasigan'].flatMap(name => ['jpg', 'png', 'webp'].map(ext => `/assets/team/${name}.${ext}`)),
   ...['team-innobyte.webp', 'award-presentation.webp', 'third-runner-up.webp'].map(file => '/assets/hackathon/' + file),
+  ...['qualifiers-press-report.webp', 'third-runner-up-press-report.webp'].map(file => '/assets/press/' + file),
   ...['01', '02', '03'].flatMap(name => ['jpg', 'png', 'webp'].map(ext => `/assets/hackathon/${name}.${ext}`)),
 ]);
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ttf': 'font/ttf', '.txt': 'text/plain; charset=utf-8' };

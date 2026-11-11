@@ -144,7 +144,19 @@ const konektadoCopy = {
     "galleryCaption3": "3rd runner-up, PUP Hackathon 2026",
     "galleryAlt3": "Team INNOBYTE and fellow attendees holding certificates and a ceremonial prize cheque at the hackathon awards",
     "galleryOpen3": "View photo: 3rd runner-up, PUP Hackathon 2026",
-    "galleryViewerNote": "PUP Hackathon 2026 · Team INNOBYTE"
+    "galleryViewerNote": "PUP Hackathon 2026",
+    "pressTitle": "In the news.",
+    "pressCredit": "Coverage by The Cloud Sentinel",
+    "pressViewerNote": "The Cloud Sentinel",
+    "pressCaption1": "From qualifiers to the main event",
+    "pressAlt1": "The Cloud Sentinel report on PUP Sto. Tomas teams advancing from the PUP Hackathon 2026 qualifiers",
+    "pressOpen1": "View press graphic: From qualifiers to the main event",
+    "pressCaption2": "INNOBYTE takes 3rd runner-up",
+    "pressAlt2": "The Cloud Sentinel report on Team INNOBYTE earning 3rd runner-up at PUP Hackathon 2026",
+    "pressOpen2": "View press graphic: INNOBYTE takes 3rd runner-up",
+    "pressRead": "Read original post <span aria-hidden=\"true\">↗</span>",
+    "pressSource1": "Read the qualifiers report on Facebook (opens in a new tab)",
+    "pressSource2": "Read the 3rd runner-up report on Facebook (opens in a new tab)"
   },
   "taglish": {
     "skip": "Skip to the story",
@@ -290,6 +302,18 @@ const konektadoCopy = {
     "galleryCaption3": "3rd runner-up sa PUP Hackathon 2026",
     "galleryAlt3": "Team INNOBYTE kasama ang fellow attendees, hawak ang certificates at ceremonial prize cheque sa hackathon awards",
     "galleryOpen3": "View photo: 3rd runner-up sa PUP Hackathon 2026",
-    "galleryViewerNote": "PUP Hackathon 2026 · Team INNOBYTE"
+    "galleryViewerNote": "PUP Hackathon 2026",
+    "pressTitle": "In the news.",
+    "pressCredit": "Featured sa The Cloud Sentinel",
+    "pressViewerNote": "The Cloud Sentinel",
+    "pressCaption1": "Pasok sa main event",
+    "pressAlt1": "Report ng The Cloud Sentinel tungkol sa PUP Sto. Tomas teams na nakapasok sa PUP Hackathon 2026 main event",
+    "pressOpen1": "View press graphic: Pasok sa main event",
+    "pressCaption2": "INNOBYTE, 3rd runner-up",
+    "pressAlt2": "Report ng The Cloud Sentinel tungkol sa Team INNOBYTE bilang 3rd runner-up sa PUP Hackathon 2026",
+    "pressOpen2": "View press graphic: INNOBYTE, 3rd runner-up",
+    "pressRead": "Read original post <span aria-hidden=\"true\">↗</span>",
+    "pressSource1": "Read the qualifiers report sa Facebook (opens in a new tab)",
+    "pressSource2": "Read the 3rd runner-up report sa Facebook (opens in a new tab)"
   }
 };

@@ -307,13 +307,34 @@
   const zoomButton = $('#zoom-viewer'), viewerHint = $('#viewer-hint');
   let imageOpener = null, zoomed = false, backdropPointer = null, previousOverflow = '';
   function renderViewerLabels() {
-    $('.viewer-header [data-copy="viewerNote"]').textContent = text(imageOpener?.classList.contains('gallery-zoom') ? 'galleryViewerNote' : 'viewerNote');
+    const noteKey = imageOpener?.classList.contains('press-zoom') ? 'pressViewerNote' : imageOpener?.classList.contains('gallery-zoom') ? 'galleryViewerNote' : 'viewerNote';
+    $('.viewer-header [data-copy="viewerNote"]').textContent = text(noteKey);
     zoomButton.textContent = text(zoomed ? 'viewerFit' : 'viewerZoom');
     zoomButton.setAttribute('aria-pressed', String(zoomed));
     imageToggle.setAttribute('aria-pressed', String(zoomed));
     imageToggle.setAttribute('aria-label', text(zoomed ? 'viewerImageFit' : 'viewerImageZoom'));
     viewerHint.textContent = text(zoomed ? 'viewerZoomHint' : 'viewerFitHint');
   }
+  function fitViewerImage() {
+    if (!viewer.open) return;
+    const source = imageOpener?.querySelector('img');
+    const naturalWidth = viewerImage.naturalWidth || Number(source?.getAttribute('width')) || 1080;
+    const naturalHeight = viewerImage.naturalHeight || Number(source?.getAttribute('height')) || 1920;
+    const captionHeight = $('.viewer-header').offsetHeight;
+    const availableWidth = Math.max(1, innerWidth - (innerWidth <= 600 ? 48 : 128));
+    const availableHeight = Math.max(1, innerHeight - captionHeight - 112);
+    const scale = Math.min(1, availableWidth / naturalWidth, availableHeight / naturalHeight);
+    viewer.style.setProperty('--viewer-fit-width', Math.floor(naturalWidth * scale) + 'px');
+    viewer.style.setProperty('--viewer-fit-height', Math.floor(naturalHeight * scale) + 'px');
+  }
+  viewerImage.addEventListener('load', () => {
+    if (viewer.open) { fitViewerImage(); setViewerZoom(false); }
+  });
+  addEventListener('resize', () => {
+    if (viewer.open) { fitViewerImage(); if (zoomed) setViewerZoom(false); }
+  });
+  new ResizeObserver(() => { if (viewer.open) fitViewerImage(); }).observe($('.viewer-header'));
+
   function setViewerZoom(next, point) {
     // Keep the complete capture visible initially. Detail mode uses normal
     // scrolling, including touch panning; browser pinch zoom stays available.
@@ -321,14 +342,14 @@
     const origin = point || { x: .5, y: 0 };
     zoomed = next;
     if (next) {
-      const width = Math.min(viewerImage.naturalWidth || Infinity, Math.max(imageWrap.clientWidth - 24, fitted.width * 2.5));
+      const width = Math.min(viewerImage.naturalWidth || Infinity, Math.max(imageWrap.clientWidth, fitted.width * 2.5));
       viewer.style.setProperty('--viewer-detail-width', width + 'px');
     }
     viewer.classList.toggle('is-zoomed', next);
     renderViewerLabels();
     const enlarged = viewerImage.getBoundingClientRect();
-    imageWrap.scrollLeft = next ? Math.max(0, origin.x * enlarged.width + 12 - imageWrap.clientWidth / 2) : 0;
-    imageWrap.scrollTop = next ? Math.max(0, origin.y * enlarged.height + 12 - imageWrap.clientHeight / 2) : 0;
+    imageWrap.scrollLeft = next ? Math.max(0, origin.x * enlarged.width - imageWrap.clientWidth / 2) : 0;
+    imageWrap.scrollTop = next ? Math.max(0, origin.y * enlarged.height - imageWrap.clientHeight / 2) : 0;
   }
   zoomButton.addEventListener('click', () => setViewerZoom(!zoomed));
   imageToggle.addEventListener('click', event => {
@@ -343,15 +364,18 @@
       viewerImage.alt = button.querySelector('img').alt;
       $('#viewer-title').textContent = button.dataset.caption;
       previousOverflow = document.body.style.overflow;
-      viewer.showModal(); setViewerZoom(false);
+      viewer.showModal(); fitViewerImage(); setViewerZoom(false);
       document.body.style.overflow = 'hidden';
       $('#close-viewer').focus();
     });
   });
   $('#close-viewer').addEventListener('click', () => viewer.close());
   function outsideViewer(event) {
-    const rect = viewer.getBoundingClientRect();
-    return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    // Transparent space is part of the dismiss area, including gaps inside the dialog.
+    return ![imageWrap, $('.viewer-header'), $('#close-viewer')].some(element => {
+      const rect = element.getBoundingClientRect();
+      return event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;
+    });
   }
   viewer.addEventListener('pointerdown', event => {
     backdropPointer = outsideViewer(event) ? event.pointerId : null;

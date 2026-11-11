@@ -15,3 +15,9 @@ Portrait and hackathon placeholders: simple repo-native SVG layouts created for 
 Find Work photograph and five team portraits: supplied by the owner, 2026-11-11. Optimized WebP copies use EXIF-correct orientation and no embedded source metadata. Original files are retained unchanged outside this project. Team photos replaced the portrait placeholders at that update; event placeholders were subsequently replaced by the supplied gallery photos listed below.
 
 Hackathon gallery: owner-supplied photos, 2026-11-11. TEAM INNOBYTE2.HEIC -> hackathon/team-innobyte.webp; IMG_3839.HEIC -> hackathon/award-presentation.webp; IMG_3843.HEIC -> hackathon/third-runner-up.webp. Converted with EXIF-correct orientation, resized to 1920 x 1440 maximum, WebP quality 85; no embedded source metadata. Full compositions retained. Original files are unchanged.
+
+Press graphics: The Cloud Sentinel, the official publication of the Computer Society, as credited in the supplied artwork. Owner-supplied JPG files 793204110_1685859716878195_455685333258485737_n.jpg and 854872235_1733827425414757_4917589039153379739_n.jpg, previously converted to WebP, used as press/qualifiers-press-report.webp and press/third-runner-up-press-report.webp. Full artwork, headlines and publication credit retained. Original files are unchanged.
+
+Original press posts, matched by their public article headlines on 2026-11-11:
+Qualifiers report: https://www.facebook.com/share/p/1FLBK2A8kJ/
+3rd runner-up report: https://www.facebook.com/share/p/19Zfa9U1LA/
